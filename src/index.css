@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+  .font-syne {
+    font-family: 'Syne', sans-serif;
+  }
+  .font-sans {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+:root {
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); filter: blur(90px); }
+  50% { opacity: 0.55; transform: scale(1.06); filter: blur(120px); }
+}
+
+.animate-glow {
+  animation: pulse-glow 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Premium Card Transition System */
+.card-hover-system {
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-hover-system:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(5, 31, 32, 0.8), 0 0 25px -5px rgba(35, 83, 71, 0.3);
+}
+
+/* Button interactive system */
+.btn-premium {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 250ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -8px rgba(35, 83, 71, 0.5);
+}
+
+.btn-premium:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Custom scrollbar for dark aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #051F20;
+}
+::-webkit-scrollbar-thumb {
+  background: #163832;
+  border-radius: 9999px;
+  border: 2px solid #051F20;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #235347;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

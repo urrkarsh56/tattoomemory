@@ -1,0 +1,6 @@
+{
+  "name": "Tattoo Memory Indore - Premium Tattoo & Piercing Studio",
+  "description": "5.0-star rated tattoo & piercing studio in Somani Nagar, Indore. Custom ink artistry, fine line tattoos, 24/7 studio sessions, and AI tattoo concept visualizer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
